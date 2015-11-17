@@ -60,3 +60,55 @@
     font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
     padding:7px;
 }
+
+ul.work-list li {
+    float: left;
+    width: 100%;
+}
+
+li div.work-item {
+    float: right;
+    width: 100%;
+}
+
+li.tech-tag-item {
+	font-family: 'Lucida Grande', arial;
+	font-size: 0.75em;
+	padding: 2px 5px;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+    margin-right:5px;
+}
+.tech-tag-item-wpf, .tech-tag-item-default { background: #f0db4f; color: #333 !important; }
+.tech-tag-item-mvvm, .tech-tag-item-ocr { background: #80bd01; }
+.tech-tag-item-dicom { background: #f60; }
+.tech-tag-item-html5,.tech-tag-item-etl  { background: #f90; }
+.tech-tag-item-ssh,.tech-tag-item-ssis { background: #68217a; }
+.tech-tag-item-jquery { background: #003b57; }
+.tech-tag-item-wcf, .tech-tag-item-pacs { background: #015a84; }
+
+li.project-matrix {
+	font-family: 'Lucida Grande', arial;
+	font-size: 0.75em;
+	padding: 2px 5px;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+    margin-right:5px;
+}
+
+li.project-matrix-size {
+    background: #68217a;
+}
+li.project-matrix-duration {
+    background: #003b57;
+}
+li.project-matrix-loc {
+    background: #015a84; 
+}
+li.project-matrix-wow {
+    background: #80bd01; 
+}
