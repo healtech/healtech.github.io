@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Shelvin Online Resume</title>
+
+		<meta name="description" content="Software Engineer Resume">
+		<meta name="author" content="Shelvin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link type="text/css" href="css/base.css" rel="stylesheet" />
+        <link type="text/css" href="css/RGraph.css" rel="stylesheet" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+        
+<!--
+    
+        <link rel="stylesheet" href="ammap/ammap.css" type="text/css">
+        <link rel="stylesheet" href="ammap/style.css" type="text/css">
+
+		 amCharts javascript sources 
+		<script type="text/javascript" src="ammap/ammap.js"></script>
+		<script type="text/javascript" src="ammap/maps/js/chinaLow.js"></script>
+-->
+	</head>
+
+	<body onload="init();">
+		<div class="reveal">
+            <div class="slides">
+                <!-- Any section element inside of this container is displayed as a slide -->
+			
+                <section>
+                    <img id="avatar" src="images/avatar.png"/>
+                    <p>8 year+ software developement experience</p>
+                    <p>5 year+ MNC R&D experience at Medical device</p>
+                    <p>3 year+ software outsourcing experience at E-commerce, Web, SaaS</p>
+                </section>
+
+                <section>
+                    <p style="position:absolute;left: -100px;">Skill I Used</p>
+                    <div id="center-container">
+                        <div id="infovis"></div>
+                    </div>
+                </section>
+
+                <section data-background-iframe="position.html">
+                    <p style="position:absolute; top: -320px;">Life Journey</p>
+                </section>
+                <section>
+                    <h2>What did I do</h2>
+                </section>
+
+
+                <section>
+                    <h2>What am I intrested In</h2>
+                </section>
+
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+        <script language="javascript" type="text/javascript" src="Js/jit.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+            
+            // Skill Set Js
+            function init(){    
+                var json = {
+                    id: 1,
+                    name: "R&D",  
+                    children: [{
+                        id: 2,
+                        name: "Language",
+                        children: [{
+                            id: 2.1,
+                            name: "C#"
+                        }, {
+                            id: 2.2,
+                            name: "Java"
+                        }, {
+                            id: 2.3,
+                            name: "Html5"
+                        }, {
+                            id: 2.4,
+                            name: "JavaScript"
+                        }]
+                    },{
+                        id : 3,
+                        name: "Process & Tools",
+                        children: [{
+                            id: 3.1,
+                            name: "Scrum"
+                        }, {
+                            id: 3.2,
+                            name: "Visual Studio"
+                        }, {
+                            id: 3.3,
+                            name: "Eclipse"
+                        }, {
+                            id: 3.4,
+                            name: "RTC"
+                        }, {
+                            id: 3.5,
+                            name: "ClearQuest"
+                        }, {
+                            id: 3.5,
+                            name: "Agile"
+                        }] 
+                    },{
+                        id : 4,
+                        name: "Medical Device",
+                        children: [{
+                            id: 4.1,
+                            name: "Image Processing"
+                        }, {
+                            id: 4.2,
+                            name: "DICOM"
+                        }, {
+                            id: 4.3,
+                            name: "PACS"
+                        }, {
+                            id: 4.4,
+                            name: "Medical Imaging"
+                        }]
+                    },{
+                        id : 5,
+                        name: "Web Development",
+                        children: [{
+                            id: 5.1,
+                            name: "HTML5"
+                        }, {
+                            id: 5.2,
+                            name: "CSS"
+                        }, {
+                            id: 5.3,
+                            name: "Web API"
+                        }, {
+                            id: 5.4,
+                            name: "JQuery"
+                        }, {
+                            id: 5.5,
+                            name: "AngularJS"
+                        }]
+                    },{
+                        id : 6,
+                        name: "Client Development",
+                        children: [{
+                            id: 6.1,
+                            name: "WPF"
+                        }, {
+                            id: 6.2,
+                            name: "MVVM"
+                        }, {
+                            id: 6.3,
+                            name: "Windows Forms"
+                        }]
+                    }]
+                };
+
+
+                var rgraph = new $jit.RGraph({  
+                    //Where to append the visualization  
+                    injectInto: 'infovis',  
+                    //Optional: create a background canvas that plots  
+                    //concentric circles.  
+                    background: {  
+                      CanvasStyles: {  
+                        strokeStyle: '#555'  
+                      }  
+                    },  
+                    //Add navigation capabilities:  
+                    //zooming by scrolling and panning.  
+                    Navigation: {  
+                      enable: true,  
+                      panning: true,  
+                      zooming: 10  
+                    },  
+                    //Set Node and Edge styles.  
+                    Node: {  
+                        color: '#ddeeff'  
+                    },  
+
+                    Edge: {  
+                      color: '#C17878',  
+                      lineWidth:1.5  
+                    },  
+
+                //    onBeforeCompute: function(node){  
+                //        Log.write("centering " + node.name + "...");  
+                //        //Add the relation list in the right column.  
+                //        //This list is taken from the data property of each JSON node.  
+                //        $jit.id('inner-details').innerHTML = node.data.relation;  
+                //    },  
+
+                    //Add the name of the node in the correponding label  
+                    //and a click handler to move the graph.  
+                    //This method is called once, on label creation.  
+                    onCreateLabel: function(domElement, node){  
+                        domElement.innerHTML = node.name;  
+                        domElement.onclick = function(){  
+                            rgraph.onClick(node.id, {  
+                                onComplete: function() {  
+                //                    Log.write("done");  
+                                }  
+                            });  
+                        };  
+                    },  
+                    //Change some label dom properties.  
+                    //This method is called each time a label is plotted.  
+                    onPlaceLabel: function(domElement, node){  
+                        var style = domElement.style;  
+                        style.display = '';  
+                        style.cursor = 'pointer';  
+
+                        if (node._depth <= 1) {  
+                            style.fontSize = "0.8em";  
+                            style.color = "#ccc";  
+
+                        } else if(node._depth == 2){  
+                            style.fontSize = "0.7em";  
+                            style.color = "#494949";  
+
+                        } else {  
+                            style.display = 'none';  
+                        }  
+
+                        var left = parseInt(style.left);  
+                        var w = domElement.offsetWidth;  
+                        style.left = (left - w / 2) + 'px';  
+                    }  
+                });  
+                //load JSON data  
+                rgraph.loadJSON(json);  
+                //trigger small animation  
+                rgraph.graph.eachNode(function(n) {  
+                  var pos = n.getPos();  
+                  pos.setc(-200, -200);  
+                });  
+                rgraph.compute('end');  
+                rgraph.fx.animate({  
+                  modes:['polar'],  
+                  duration: 2000  
+                });  
+            }
+            
+           
+		</script>
+
+	</body>
+</html>

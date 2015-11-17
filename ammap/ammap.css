@@ -1,0 +1,84 @@
+div.ammapAlert
+{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    font-family:verdana,helvetica,arial,sans-serif;
+    font-size:12px;
+    color:#CC0000;
+}
+
+div.ammapDescriptionWindow
+{
+   font-size:11px;
+   font-family:verdana,helvetica,arial,sans-serif;
+   background-color:#FFFFFF;
+   border-style:solid;
+   border-color:#DADADA;
+   border-width:1px;
+   color:#000000;
+   padding:8px;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+div.ammapDescriptionTitle
+{
+   font-size:12px;
+   font-weight:bold;
+   font-family:verdana,helvetica,arial,sans-serif;
+   padding-bottom:5px;
+}
+
+.reveal section img.ammapDescriptionWindowCloseButton
+{
+    margin: 0px;
+}
+
+div.ammapObjectList ul
+{
+    padding-left:20px;
+    list-style:square outside;
+    color:#999999;
+    font-family:verdana,helvetica,arial,sans-serif;
+    font-size: 12px;
+}
+
+div.ammapObjectList ul ul
+{
+    padding-left:14px;
+}
+
+div.ammapObjectList a
+{
+    color:#000000;
+}
+
+div.ammapObjectList a
+{
+    color:#000000;
+    text-decoration:none;
+    display:block;
+    padding:2px;
+}
+
+div.ammapObjectList a:hover
+{
+    color:#CC0000;
+    text-decoration:none;
+    background:#FFFFFF;
+    cursor:pointer;
+    display:block;
+}
+
+div.ammapDescriptionText
+{
+	overflow: auto;
+}
+
+
+div.amChartsPlotArea
+{
+
+}
