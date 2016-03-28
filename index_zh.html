@@ -14,14 +14,148 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-        <link type="text/css" href="css/base.css" rel="stylesheet" />
-        <link type="text/css" href="css/RGraph.css" rel="stylesheet" />
+		<link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+        <style>
+            text {
+              font: 14px sans-serif;
+            }
+            
+            #scale {
+                margin: 8px;
+                width: 240px;
+                height: 20px;
+                float:left;
+                background: #ff0000;
+                background: -moz-linear-gradient(left, rgb(253, 141, 60) 0%, rgb(161, 217, 155) 30%,  rgb(107, 174, 214) 100%);
+                background: -webkit-linear-gradient(left, rgb(253, 141, 60) 0%, rgb(161, 217, 155) 30%,  rgb(107, 174, 214) 100%);
+                background: -o-linear-gradient(left, rgb(253, 141, 60) 0%, rgb(161, 217, 155) 30%,  rgb(107, 174, 214) 100%);
+                background: -ms-linear-gradient(left, rgb(253, 141, 60) 0%, rgb(161, 217, 155) 30%,  rgb(107, 174, 214) 100%);
+                background: linear-gradient(to right, rgb(253, 141, 60) 0%, rgb(161, 217, 155) 30%,  rgb(107, 174, 214) 100%);
+                color: white;
+                font-weight: bold;
+                font-size: 0.8em;
+                text-shadow: 0 0 3px black;
+            }
+            #avatar {
+                width: 256px;
+                height: 256px;
+                border: 10px solid #67949D;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -o-border-radius: 50%;
+                border-radius: 50%;
+            }
+            #center-container {
+                width:500px;
+                height:500px;
+                margin: 0 auto;
+                top: 120px;
+                background-color:#222;
+                color:#222;
+            }
 
+            .text {
+                margin: 7px;
+            }
+
+            #inner-details {
+                font-size:0.8em;
+                list-style:none;
+                margin:7px;
+            }
+
+            #log {
+                position:absolute;
+                top:10px;
+                font-size:1.0em;
+                font-weight:bold;
+                color:#23A4FF;
+            }
+
+
+            #infovis {
+                position:relative;
+                width:500px;
+                height:500px;
+                margin:auto;
+                overflow:hidden;
+                font-size: 0.6em
+            }
+
+            /*TOOLTIPS*/
+            .tip {
+                color: #111;
+                width: 139px;
+                background-color: white;
+                border:1px solid #ccc;
+                -moz-box-shadow:#555 2px 2px 8px;
+                -webkit-box-shadow:#555 2px 2px 8px;
+                -o-box-shadow:#555 2px 2px 8px;
+                box-shadow:#555 2px 2px 8px;
+                opacity:0.9;
+                filter:alpha(opacity=90);
+                font-size:10px;
+                font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+                padding:7px;
+            }
+
+            ul.work-list li {
+                float: left;
+                width: 100%;
+            }
+
+            li div.work-item {
+                float: right;
+                width: 100%;
+            }
+
+            li.tech-tag-item {
+                font-family: 'Lucida Grande', arial;
+                font-size: 0.75em;
+                padding: 2px 5px;
+                border-radius: 3px;
+                display: inline-block;
+                vertical-align: middle;
+                color: #fff;
+                margin-right:5px;
+            }
+            .tech-tag-item-wpf, .tech-tag-item-default { background: #f0db4f; color: #333 !important; }
+            .tech-tag-item-mvvm, .tech-tag-item-ocr { background: #80bd01; }
+            .tech-tag-item-dicom { background: #f60; }
+            .tech-tag-item-html5,.tech-tag-item-etl  { background: #f90; }
+            .tech-tag-item-ssh,.tech-tag-item-ssis { background: #68217a; }
+            .tech-tag-item-jquery { background: #003b57; }
+            .tech-tag-item-wcf, .tech-tag-item-pacs { background: #015a84; }
+
+            li.project-matrix {
+                font-family: 'Lucida Grande', arial;
+                font-size: 0.75em;
+                padding: 2px 5px;
+                border-radius: 3px;
+                display: inline-block;
+                vertical-align: middle;
+                color: #fff;
+                margin-right:5px;
+            }
+
+            li.project-matrix-size {
+                background: #68217a;
+            }
+            li.project-matrix-duration {
+                background: #003b57;
+            }
+            li.project-matrix-loc {
+                background: #015a84; 
+            }
+            li.project-matrix-wow {
+                background: #80bd01; 
+            }
+
+        </style>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -35,47 +169,36 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
         
-<!--
-    
-        <link rel="stylesheet" href="ammap/ammap.css" type="text/css">
-        <link rel="stylesheet" href="ammap/style.css" type="text/css">
-
-		 amCharts javascript sources 
-		<script type="text/javascript" src="ammap/ammap.js"></script>
-		<script type="text/javascript" src="ammap/maps/js/chinaLow.js"></script>
--->
 	</head>
 
-	<body onload="init();">
+	<body>
 		<div class="reveal">
             <div class="slides">
                 <!-- Any section element inside of this container is displayed as a slide -->
 			
                 <section>
                     <img id="avatar" src="images/Avatar.png"/>
-                    <p>八年以上软件开发经验</p>
-                    <p>五年医疗器械跨国公司软件研发经验</p>
-                    <p>三年软件外包经验, 涵盖网页开发, 电子商务, SaaS</p>
-                    <small>shelvin.yuan@gmail.com</small>
+                    <p>八年以上软件开发经验涵盖多个领域</p>
+                    <p>五年以上跨国企业研发经验</p>
+                    <small>http://healtech.github.io/</small>
+                    <small>Stackoverflow: Shelvin </small><br/>
+                    <small>现居地: 苏州 &nbsp;&nbsp; 手机: 18662333746</small>
+                </section>
+				<section>
+                    <ul>
+                    <li>8年以上软件开发经验，涉及电子商务，游戏，医疗等多个领域，技能面广，善于解决问题</li>
+					<li>对OOP, 设计模式有深刻了解，精通Java, C#, javascript</li>
+					<li>有大型项目开发经验(项目总代码行数超过四百万行, 全球4个软件团队合作, 沟通协作能力强，英语流利.</li>
+					<li>熟悉敏捷开发，Scrum 流程，曾在多个项目中担任Scrum master. 对开发流程、部署、测试、系统集成都有深刻了解.（曾代表软件团队去美国实施为期两周的集成测试）</li>
+                    <li>有独立设计架构经验，熟练掌握多线程编程，对分布式架构有一定了解</li></ul>
+					
+                </section>
+				
+                <section id="skillset">
+                    <div id="scale"><small>Confidence Level</small></div>
+                    <small>&Omicron; size &prop; experience</small>
                 </section>
 
-                <section>
-                    <section>
-                        <p style="position:absolute;left: 40px;">我的专业技能</p>
-                        <div id="center-container">
-                            <div id="infovis"></div>
-                        </div>
-                    </section>
-<!--
-                    <section>
-                        <h3>Professional</h3>
-                    </section>
--->
-                </section>
-
-                <section data-background-iframe="position_zh.html">
-                    <p style="position:absolute; top: -320px;">人生旅途</p>
-                </section>
                 <section>
                     <h3>工作教育经历</h3>
                     <ul class="work-list">
@@ -97,9 +220,9 @@
                         </li>
                         <li class="fragment">
                             <div class="work-item"> 
-                                <div style="float: left;">实习</div>
+                                <div style="float: left;">培训+实习</div>
                                 <br/>
-                                <div style="float: left;">微软北京DPE部门</div> 
+                                <div style="float: left;">武汉思远+微软北京DPE</div> 
                                 <div style="float: right;">2006 - 2007</div>
                             </div>
                         </li>
@@ -118,33 +241,16 @@
                         <h2>项目经验</h2>
                     </section>
                     <section>
-                        <h3>核共振疾病分析应用</h3>
+                        <h3>影像病例知识管理系统</h3>
                         <ul>
-                            <li class="tech-tag-item tech-tag-item-dicom">DICOM</li>
-                            <li class="tech-tag-item tech-tag-item-pacs">PACS</li>
-                            <li class="tech-tag-item tech-tag-item-default">Image Processing</li>
-                            <li class="tech-tag-item tech-tag-item-wpf">WPF</li>
-                            <li class="tech-tag-item tech-tag-item-mvvm">MVVM</li>
+                            <li class="tech-tag-item tech-tag-item-dicom">Spring MVC</li>
+                            <li class="tech-tag-item tech-tag-item-pacs">AngularJS</li>
                         </ul>
                         <ul>
                             <li class="project-matrix project-matrix-size">3个开发</li>
-                            <li class="project-matrix project-matrix-duration">少于半年</li>
+                            <li class="project-matrix project-matrix-duration">大于半年</li>
                         </ul>
-                        <p>负责核磁共振肝诊疗应用在PACS上的开发设计集成.</p>
-                    </section>
-                    <section>
-                        <h3>16排CT控制台应用开发</h3>
-                        <ul>
-                            <li class="tech-tag-item tech-tag-item-wpf">WPF</li>
-                            <li class="tech-tag-item tech-tag-item-wcf">WCF</li>
-                            <li class="tech-tag-item tech-tag-item-mvvm">MVVM</li>
-                        </ul>
-                        <ul>
-                            <li class="project-matrix project-matrix-size">4个开发</li>
-                            <li class="project-matrix project-matrix-duration">一年左右</li>
-                            <li class="project-matrix project-matrix-wow">全球协作</li>
-                        </ul>
-                        <p>负责控制台应用在16排CT扫描仪的适配,涉及扫描计划,规则引擎,底层数据采集和数据处理适配等模块.</p>
+                        <p>分析系统需求，搭建系统整体框架，并对开发过程出现的问题提供可行性方案.</p>
                     </section>
                     <section>
                         <h3>Gantry Hybrid Panel & Dynamic Navigation Framework</h3>
@@ -182,29 +288,29 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>Access CT Console</h3>
+                        <h3>iPatient Access CT Console 平台开发</h3>
                         <ul>
                             <li class="tech-tag-item tech-tag-item-wpf">WPF</li>
                             <li class="tech-tag-item tech-tag-item-default">SSIS</li>
                             <li class="tech-tag-item tech-tag-item-mvvm">MVVM</li>
-                            <li class="tech-tag-item tech-tag-item-default">COM</li>
+                            <li class="tech-tag-item tech-tag-item-default">WCF</li>
                         </ul>
                         <ul>
                             <li class="project-matrix project-matrix-size">5个开发</li>
                             <li class="project-matrix project-matrix-duration">超过一年</li>
                         </ul>
                         <ul>
+							<li>对已有系统的展示层进行重构，实现用户界面和后台逻辑代码分离</li>
                             <li>负责software CT Box模块的开发，包含CT系统状态显示和CT床的摆位控制等功能.</li>
                             <li>协同开发CT Console的性能资源监控统计模块, 负责数据分析,报告生成等功能.</li>
                         </ul>
                     </section>
                     <!-- Augmentum -->
                     <section>
-                        <h3>AstraZeneca tumor component data system</h3>
+                        <h3>阿斯利康抗肿瘤药物数据平台</h3>
                         <ul>
-                            <li class="tech-tag-item tech-tag-item-default">ASP .NET</li>
-                            <li class="tech-tag-item tech-tag-item-jquery">JQuery</li>
                             <li class="tech-tag-item tech-tag-item-ssh">SSH</li>
+                            <li class="tech-tag-item tech-tag-item-jquery">JQuery</li>
                             <li class="tech-tag-item tech-tag-item-default">SQL</li>
                         </ul>
                         <ul>
@@ -212,12 +318,47 @@
                             <li class="project-matrix project-matrix-duration">超过半年</li>
                         </ul>
                         <ul>
-                            <li>负责阿斯特康基于ASP.NET实现的肿瘤数据系统的维护以及新功能开发.(单人)</li>
                             <li>参与基于SSH框架的新肿瘤化合物数据管理系统的模块开发.</li>
+                            <li>负责阿斯特康基于ASP.NET实现的肿瘤数据系统的维护以及新功能开发.</li>
                         </ul>
                     </section>
                     <section>
-                        <h3>Disney 产品经销商数据采集分析系统</h3>
+                        <h3>EA 多人在线游戏平台</h3>
+                        <ul>
+                            <li class="tech-tag-item tech-tag-item-default">NHibernate</li>
+                            <li class="tech-tag-item tech-tag-item-wpf">WPF</li>
+                            <li class="tech-tag-item tech-tag-item-default">SOA</li>
+                            <li class="tech-tag-item tech-tag-item-default">Memcache</li>
+                        </ul>
+                        <ul>
+                            <li class="project-matrix project-matrix-size">&gt;20个开发</li>
+                            <li class="project-matrix project-matrix-duration">超过一年</li>
+                        </ul>
+                        <p>项目旨在提供一个大型多人对战平台以及可复用、扩展、分布式平台框架（类似Battle.net, 浩方对战平台），使得EA能更容易把它的单机游戏开发部署成为多人在线游戏. </p>
+                        <ul>
+                            <li>参与SOA微服务应用框架的开发.</li>
+                            <li>负责针对游戏开发人员的DSL开发工具的开发.</li>
+                        </ul>
+                    </section>
+                     <section>
+                        <h3>JShop在线商务平台</h3>
+                        <ul>
+                            <li class="tech-tag-item tech-tag-item-ssh">SSH</li>
+                            <li class="tech-tag-item tech-tag-item-default">Lucene</li>
+                            <li class="tech-tag-item tech-tag-item-default">Memcache</li>
+                        </ul>
+                        <ul>
+                            <li class="project-matrix project-matrix-size">&gt;8个开发</li>
+                            <li class="project-matrix project-matrix-duration">超过半年</li>
+                        </ul>
+                        <p>开发一个基于多租户SaaS应用的在线电子商务网店系统.</p>
+                        <ul>
+                            <li>负责产品模块和订单模块的前台显示以及后台管理的开发.</li>
+                            <li>参与研究设计基于Lucene的搜索功能模块的开发.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>迪斯尼产品经销商数据采集分析系统</h3>
                         <ul>
                             <li class="tech-tag-item tech-tag-item-default">ASP .NET</li>
                             <li class="tech-tag-item tech-tag-item-etl">ETL</li>
@@ -233,58 +374,14 @@
                             <li>指导团队新人实现基于ASP.NET, WCF Restful Service开发的数据报告系统.</li>
                         </ul>
                     </section>
-                    <section>
-                        <h3>EA online game platform</h3>
-                        <ul>
-                            <li class="tech-tag-item tech-tag-item-default">NHibernate</li>
-                            <li class="tech-tag-item tech-tag-item-wpf">WPF</li>
-                            <li class="tech-tag-item tech-tag-item-default">Code Generation</li>
-                        </ul>
-                        <ul>
-                            <li class="project-matrix project-matrix-size">&gt;20个开发</li>
-                            <li class="project-matrix project-matrix-duration">超过一年</li>
-                        </ul>
-                        <p>项目旨在提供一个大型多人对战平台以及可复用、扩展平台框架（类似Battle.net, 浩方对战平台），使得EA能更容易把它的单机游戏开发部署成为多人在线游戏. </p>
-                        <ul>
-                            <li>负责元数据, 操作变量, Boo脚本方法的代码生成工具的开发.</li>
-                            <li>参与平台服务模版的开发.</li>
-                        </ul>
-                    </section>
-                     <section>
-                        <h3>JShop</h3>
-                        <ul>
-                            <li class="tech-tag-item tech-tag-item-ssh">SSH</li>
-                            <li class="tech-tag-item tech-tag-item-default">Lucene</li>
-                        </ul>
-                        <ul>
-                            <li class="project-matrix project-matrix-size">&gt;8个开发</li>
-                            <li class="project-matrix project-matrix-duration">超过半年</li>
-                        </ul>
-                        <p>开发一个基于多租户SaaS应用的在线电子商务网店系统.</p>
-                        <ul>
-                            <li>负责产品模块和订单模块的前台显示以及后台管理的开发.</li>
-                            <li>参与研究设计基于Lucene的搜索功能模块的开发.</li>
-                        </ul>
-                    </section>
-                </section>
-                <section>
-                    <h2>我的愿景</h2>
-                    <p>为改善人类生活，解决实际问题提供创新集成软件平台/方案</p>
-                </section>
-                <section>
-                    <h2>更多信息</h2>
-                    <p>最近读的书:  Mindset The new psychology of success</p>
-                    <p>最近在Coursera学的课程:  Big Data, Cloud Computing, & CDN Emerging Technologies</p>
-                    <p>在线简历: http://healtech.github.io/index_zh.html</p>
-                    <p>LinkedIn: https://www.linkedin.com/in/shelvinyuan</p>
                 </section>
 
             </div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-        <script language="javascript" type="text/javascript" src="js/jit-yc.js"></script>
+		<script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
+		<script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script src="bower_components/d3/d3.min.js"></script>
 
 		<script>
 
@@ -300,197 +397,70 @@
 
 				// Optional reveal.js plugins
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'bower_components/reveal.js/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true }
 				]
 			});
             
-            // Skill Set Js
-            function init(){    
-                var json = {
-                    id: 1,
-                    name: "R&D",  
-                    children: [{
-                        id: 2,
-                        name: "Language",
-                        children: [{
-                            id: 2.1,
-                            name: "C#"
-                        }, {
-                            id: 2.2,
-                            name: "Java"
-                        }, {
-                            id: 2.3,
-                            name: "Html5"
-                        }, {
-                            id: 2.4,
-                            name: "JavaScript"
-                        }]
-                    },{
-                        id : 3,
-                        name: "Process & Tools",
-                        children: [{
-                            id: 3.1,
-                            name: "Scrum"
-                        }, {
-                            id: 3.2,
-                            name: "Visual Studio"
-                        }, {
-                            id: 3.3,
-                            name: "Eclipse"
-                        }, {
-                            id: 3.4,
-                            name: "RTC"
-                        }, {
-                            id: 3.5,
-                            name: "ClearQuest"
-                        }, {
-                            id: 3.5,
-                            name: "Agile"
-                        }] 
-                    },{
-                        id : 4,
-                        name: "Medical Device",
-                        children: [{
-                            id: 4.1,
-                            name: "Image Processing"
-                        }, {
-                            id: 4.2,
-                            name: "DICOM"
-                        }, {
-                            id: 4.3,
-                            name: "PACS"
-                        }, {
-                            id: 4.4,
-                            name: "Medical Imaging"
-                        }]
-                    },{
-                        id : 5,
-                        name: "Web Development",
-                        children: [{
-                            id: 5.1,
-                            name: "HTML5"
-                        }, {
-                            id: 5.2,
-                            name: "CSS"
-                        }, {
-                            id: 5.3,
-                            name: "Web API"
-                        }, {
-                            id: 5.4,
-                            name: "JQuery"
-                        }, {
-                            id: 5.5,
-                            name: "AngularJS"
-                        }]
-                    },{
-                        id : 6,
-                        name: "Client Development",
-                        children: [{
-                            id: 6.1,
-                            name: "WPF"
-                        }, {
-                            id: 6.2,
-                            name: "MVVM"
-                        }, {
-                            id: 6.3,
-                            name: "Windows Forms"
-                        }]
-                    }]
-                };
-
-
-                var rgraph = new $jit.RGraph({  
-                    //Where to append the visualization  
-                    injectInto: 'infovis',  
-                    //Optional: create a background canvas that plots  
-                    //concentric circles.  
-                    background: {  
-                      CanvasStyles: {  
-                        strokeStyle: '#555'  
-                      }  
-                    },  
-                    //Add navigation capabilities:  
-                    //zooming by scrolling and panning.  
-                    Navigation: {  
-                      enable: true,  
-                      panning: true,  
-                      zooming: 10  
-                    },  
-                    //Set Node and Edge styles.  
-                    Node: {  
-                        color: '#ddeeff'  
-                    },  
-
-                    Edge: {  
-                      color: '#C17878',  
-                      lineWidth:1.5  
-                    },  
-
-                //    onBeforeCompute: function(node){  
-                //        Log.write("centering " + node.name + "...");  
-                //        //Add the relation list in the right column.  
-                //        //This list is taken from the data property of each JSON node.  
-                //        $jit.id('inner-details').innerHTML = node.data.relation;  
-                //    },  
-
-                    //Add the name of the node in the correponding label  
-                    //and a click handler to move the graph.  
-                    //This method is called once, on label creation.  
-                    onCreateLabel: function(domElement, node){  
-                        domElement.innerHTML = node.name;  
-                        domElement.onclick = function(){  
-                            rgraph.onClick(node.id, {  
-                                onComplete: function() {  
-                //                    Log.write("done");  
-                                }  
-                            });  
-                        };  
-                    },  
-                    //Change some label dom properties.  
-                    //This method is called each time a label is plotted.  
-                    onPlaceLabel: function(domElement, node){  
-                        var style = domElement.style;  
-                        style.display = '';  
-                        style.cursor = 'pointer';  
-
-                        if (node._depth <= 1) {  
-                            style.fontSize = "0.8em";  
-                            style.color = "#ccc";  
-
-                        } else if(node._depth == 2){  
-                            style.fontSize = "0.7em";  
-                            style.color = "#494949";  
-
-                        } else {  
-                            style.display = 'none';  
-                        }  
-
-                        var left = parseInt(style.left);  
-                        var w = domElement.offsetWidth;  
-                        style.left = (left - w / 2) + 'px';  
-                    }  
-                });  
-                //load JSON data  
-                rgraph.loadJSON(json);  
-                //trigger small animation  
-                rgraph.graph.eachNode(function(n) {  
-                  var pos = n.getPos();  
-                  pos.setc(-200, -200);  
-                });  
-                rgraph.compute('end');  
-                rgraph.fx.animate({  
-                  modes:['polar'],  
-                  duration: 2000  
-                });  
-            }
+            // skill set
+            var diameter = 700,
+                format = d3.format(",d"),
+             //   color = d3.scale.category20c();
             
-           
-		</script>
+                color = d3.scale.linear().domain([0, 0.3, 1]).range(['rgb(253, 141, 60)', 'rgb(161, 217, 155)', 'rgb(107, 174, 214)'] );
 
+            var bubble = d3.layout.pack()
+                .sort(null)
+                .size([diameter, diameter])
+                .padding(1);
+
+            var svg = d3.select("#skillset").append("svg")
+                .attr("width", diameter)
+                .attr("height", diameter)
+                .attr("class", "bubble");
+
+            d3.json("skill.json", function(error, root) {
+              if (error) throw error;
+
+              var node = svg.selectAll(".node")
+                  .data(bubble.nodes(classes(root))
+                  .filter(function(d) { return !d.children; }))
+                .enter().append("g")
+                  .attr("class", "node")
+                  .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+              node.append("title")
+                  .text(function(d) { return d.className + ": " + format(d.value); });
+
+              node.append("circle")
+                  .attr("r", function(d) { return d.r; })
+                  .style("fill", function(d) { return color(d.conf); });
+
+              node.append("text")
+                  .attr("dy", ".3em")
+                  .style("text-anchor", "middle")
+                  .text(function(d) { return d.className.substring(0, d.r / 3); });
+            });
+
+            // Returns a flattened hierarchy containing all leaf nodes under the root.
+            function classes(root) {
+              var classes = [];
+
+              function recurse(name, node) {
+                if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+                else classes.push({packageName: name, className: node.name, value: node.y, conf: node.f });
+              }
+
+              recurse(null, root);
+              return {children: classes};
+            }
+
+            d3.select(self.frameElement).style("height", diameter + "px");
+
+        </script>
 	</body>
 </html>

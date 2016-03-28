@@ -1,0 +1,64 @@
+{
+    "name": "skill-set",
+    "children": [
+        {
+            "name": "language",
+            "children": [
+                {"name": "JAVA", "y": 5, "f": 0.9 },
+                {"name": "C#", "y": 4, "f": 0.9  },
+                {"name": "Javascript", "y": 3, "f": 0.8  },
+                {"name": "SQL", "y": 3, "f": 0.7 },
+                {"name": "PHP", "y": 1.5, "f": 0.2 }
+            ]
+        },
+        {
+            "name": "Design Pattern",
+            "children": [
+                {"name": "OOP", "y": 8, "f": 0.8 },
+                {"name": "MVVM", "y": 4, "f": 0.8 },
+                {"name": "AOP", "y": 4, "f": 0.7 },
+                {"name": "IOC", "y": 4, "f": 0.7 },
+                {"name": "FRP", "y": 2, "f": 0.4 },
+                {"name": "Restful", "y": 5, "f": 0.6 },
+                {"name": "SOA", "y": 1, "f": 0.5 }
+            ]
+        },
+        {
+            "name": "Process & Tools",
+            "children": [
+                {"name": "Scrum", "y": 4, "f": 0.8 },
+                {"name": "Git", "y": 2, "f": 0.5 },
+                {"name": "Clearcase", "y": 4, "f": 0.6}
+            ]
+        },
+        {
+            "name": "Framework & lib",
+            "children": [
+                {"name": "Sping", "y": 5, "f": 0.6 },
+                {"name": "ORM", "y": 5, "f": 0.6 },
+                {"name": "ASP MVC", "y": 3, "f": 0.6 },
+                {"name": "JQuery", "y": 4, "f": 0.5 },
+                {"name": "AngluarJs", "y": 2, "f": 0.4 }
+            ]
+        },
+        {
+            "name": "Database",
+            "children": [
+                {"name": "MySQL", "y": 4, "f": 0.6 },
+                {"name": "Memcache", "y": 2, "f": 0.3 },
+                {"name": "MongoDB", "y": 1.5, "f": 0.3 },
+                {"name": "Redis", "y": 1, "f": 0.5 }
+            ]
+        },
+        {
+            "name": "Misc",
+            "children": [
+                {"name": "Cloud", "y": 2, "f": 0.4 },
+                {"name": "Docker", "y": 1, "f": 0.25 },
+                {"name": "Nginx", "y": 1, "f": 0.25 },
+                {"name": "Tomcat", "y": 3, "f": 0.5 },
+                {"name": "Nodejs", "y": 1, "f": 0.4 }
+            ]
+        }
+  ]
+}
