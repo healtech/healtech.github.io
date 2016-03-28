@@ -161,7 +161,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href =window.location.search.match( /print-pdf/gi ) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
@@ -182,10 +182,10 @@
                     <p>五年以上跨国企业研发经验</p>
                     <small>http://healtech.github.io/</small>
                     <small>Stackoverflow: Shelvin </small><br/>
-                    <small>现居地: 苏州 &nbsp;&nbsp; 手机: 18662333746</small>
+                    <small>现居地: 苏州 &nbsp;&nbsp; </small>
                 </section>
 				<section>
-                    <ul>
+                    <ul style="font-size:0.8em">
                     <li>8年以上软件开发经验，涉及电子商务，游戏，医疗等多个领域，技能面广，善于解决问题</li>
 					<li>对OOP, 设计模式有深刻了解，精通Java, C#, javascript</li>
 					<li>有大型项目开发经验(项目总代码行数超过四百万行, 全球4个软件团队合作, 沟通协作能力强，英语流利.</li>
