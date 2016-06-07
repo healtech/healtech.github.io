@@ -34,7 +34,7 @@
         {
             "name": "Framework & lib",
             "children": [
-                {"name": "Sping", "y": 5, "f": 0.6 },
+                {"name": "Spring", "y": 5, "f": 0.6 },
                 {"name": "ORM", "y": 5, "f": 0.6 },
                 {"name": "ASP MVC", "y": 3, "f": 0.6 },
                 {"name": "JQuery", "y": 4, "f": 0.5 },
